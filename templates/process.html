@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container_prez {
+            border: 1px solid #ccc;
+            padding: 10px; /* Add padding to the inside of the border */
+            margin: 30px; /* Add margin to the outside of the border */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            height: 100vh;
+            margin : 20;
+        }
+
+        .photo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; /* Ajustez l'espacement entre les photos */
+        }
+
+        .photo {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px; /* Ajustez l'espacement entre la photo et le texte */
+            margin-left: 50px; /* Ajustez l'espacement entre la photo et le texte */
+        }
+
+        .text-container {
+            max-width: 40%; /* Ajustez la largeur du conteneur de texte en fonction de vos besoins */
+            text-align: left;
+        }
+
+        p {
+            margin: 0;
+            padding: 10px;
+            background-color: #f0f0f0; /* Ajoutez une couleur d'arrière-plan si nécessaire */
+            border-radius: 5px;
+        }
+    </style>
+    <title>Stacked Photos with Text</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Concours de la personnalité de l'année</h1>
+    <div id="message">
+        {% if message %}
+        <strong><p>{{ message }}</p></strong>
+        {% endif %}
+    </div>
+
+</body>
+</html>

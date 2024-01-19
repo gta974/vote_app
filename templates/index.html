@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .resultat {
+            border: 1px solid #ccc;
+            padding: 10px; /* Add padding to the inside of the border */
+            margin: 30px; /* Add margin to the outside of the border */
+        }
+        
+        .container_prez {
+            border: 1px solid #ccc;
+            padding: 10px; /* Add padding to the inside of the border */
+            margin: 30px; /* Add margin to the outside of the border */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            height: 100vh;
+            margin : 20;
+        }
+
+        .photo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; /* Ajustez l'espacement entre les photos */
+        }
+
+        .photo {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px; /* Ajustez l'espacement entre la photo et le texte */
+            margin-left: 50px; /* Ajustez l'espacement entre la photo et le texte */
+        }
+
+        .text-container {
+            max-width: 40%; /* Ajustez la largeur du conteneur de texte en fonction de vos besoins */
+            text-align: left;
+        }
+
+        p {
+            margin: 0;
+            padding: 10px;
+            background-color: #f0f0f0; /* Ajoutez une couleur d'arrière-plan si nécessaire */
+            border-radius: 5px;
+        }
+    </style>
+    <title>Stacked Photos with Text</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <center><h1>Concours de la personnalité de l'année</h1></body><center>
+    <!-- <div id = "presentation" class="container_prez">
+        Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. quam Constantina exultans ut in tuto iam locata mariti salute muneratam vehiculoque inpositam per regiae ianuas emisit in publicum, ut his inlecebris alios quoque ad indicanda proliceret paria vel maiora.
+    </div> -->
+
+    <strong><div class="resultat" id="resultat" name="resultat" onclick="getStats()">cliquez pour voir les statistiques</div></strong>
+    <script>
+        // var blink_speed = 500; // every 1000 == 1 second, adjust to suit
+        // var t = setInterval(function () {
+        //     var ele = document.getElementById('resultat');
+        //     ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+        // }, blink_speed);
+    </script>
+
+    <div class="container" id="container">
+        <div class="photo-container" id = "candidate1">
+            <img src="/static/063_1459166551.jpg" width="350" alt="Photo 1" class="photo">
+            <div class="text-container">
+                <div class='name'>ELON</div>
+                <div class='descripton'><p>
+                    (chatGPT) : Elon Musk, entrepreneur audacieux, a été au centre de nombreuses critiques en raison de son comportement souvent erratique et de ses déclarations controversées. Sa communication sur les réseaux sociaux, parfois impulsivement imprudente, a alimenté des polémiques et a parfois eu des conséquences financières. Musk a également été critiqué pour son attitude envers les travailleurs dans certaines de ses entreprises, avec des rapports faisant état de conditions de travail difficiles et de pratiques de gestion parfois décriées. De plus, ses commentaires sur la pandémie de COVID-19 et les restrictions liées à celle-ci ont été source de désaccord et de préoccupations. Bien que reconnu pour ses contributions à l'industrie automobile et spatiale, Elon Musk suscite des interrogations quant à sa vision éthique et à sa gestion, laissant une impression mitigée chez de nombreux observateurs.                </p></div>
+            </div>
+        </div>
+
+        <div class="photo-container" id = "candidate2">
+            <img src="/static/Bill-Gates-Headshot-1021x683-1.jpg" width="350" alt="Photo 4" class="photo">
+            <div class="text-container">
+                <div class='name'>BILL</div>
+                <div class='descripton'><p>
+                    (chatGPT) : EBill Gates, co-fondateur de Microsoft, est une personnalité qui suscite des critiques pour diverses raisons. Bien qu'il ait été un pionnier dans le domaine de la technologie, son approche parfois impitoyable pour éliminer la concurrence et établir la domination de Microsoft a soulevé des préoccupations antitrust. De plus, la Fondation Bill et Melinda Gates a également été critiquée pour son influence excessive dans les politiques de santé mondiale, parfois perçue comme une ingérence démesurée. Certains remettent en question ses initiatives philanthropiques, accusant Gates de promouvoir ses propres idées et solutions sans toujours tenir compte des contextes locaux. Ainsi, derrière la façade de l'homme d'affaires prospère et du philanthrope, persiste une image nuancée de Bill Gates, mêlée de controverses et de doutes.                </p></div>
+            </div>
+        </div>
+
+        <div class="photo-container" id = "candidate3">
+            <img src="/static/1705232724855.jpg" width="350" alt="Photo 3" class="photo">
+            <div class="text-container">
+                <div class='name'>TOM</div>
+                <div class='descripton'><p>
+                    (chatGPT) : ETom Lebon, une lumière éblouissante dans le monde de la créativité, incarne l'excellence et l'innovation de manière inégalée. Sa vision audacieuse transcende les frontières de l'ordinaire, créant un univers artistique unique qui captive et inspire. En tant que pionnier infatigable, Tom érige des ponts entre l'imagination et la réalité, façonnant un héritage créatif qui perdurera au fil des générations. Sa passion inextinguible pour l'exploration de nouvelles idées et son engagement indéfectible envers l'excellence témoignent de son statut éminent dans le monde de l'art et de l'innovation. Tom Lebon, un génie visionnaire, illumine notre monde de son génie créatif, élevant les standards et redéfinissant la frontière entre l'ordinaire et l'extraordinaire.
+                </p></div>
+            </div>
+        </div>
+
+        <div class="photo-container" id = "candidate4">
+            <img src="/static/MARK-ZUK.jpg" width="350" alt="Photo 4" class="photo" id="photo4">
+            <div class="text-container">
+                <div class='name'>MARK</div>
+                <div class='descripton'><p>
+                    (chatGPT) : EMark Zuckerberg, figure emblématique de la technologie, suscite des opinions contrastées. Certes, il a joué un rôle crucial dans la création de Facebook, mais son parcours n'est pas sans controverses. Critiqué pour sa gestion de la vie privée des utilisateurs et pour les pratiques discutables de Facebook en matière de données, Zuckerberg a été au centre de nombreuses polémiques. Son empire numérique, bien qu'imposant, est souvent associé à des problèmes éthiques et à des préoccupations croissantes concernant la désinformation et la manipulation en ligne. Malgré ses réalisations, l'héritage de Mark Zuckerberg reste teinté d'une certaine ambivalence.
+                </p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        const myDiv = document.querySelector('#candidate2');
+        // add a click event listener to the div
+        myDiv.addEventListener('click', function() {
+        // specify the action to take when the div is clicked
+        console.log('Div was clicked!');
+        response = confirm('Souhaitez vous voter pour Bill ?');
+        console.log(response);
+        });
+    </script> -->
+    <script>
+        const Parent = document.querySelector('#container');
+        Childs = Parent.children;
+        // add a click event listener to the div
+        for (var i = 0; i < Childs.length; i++){
+            // var candidate = Childs[i].querySelector('.name').innerHTML;
+            Childs[i].addEventListener('click', function(event) {
+            // specify the action to take when the div is clicked
+            // console.log('Div was clicked!');
+            console.log(event.target.tagName);
+            response = false;
+            if (event.target.tagName == "IMG") {
+                candidate = event.target.nextElementSibling.children[0].innerHTML;
+                response = confirm('Souhaitez vous voter pour ' + candidate +' ?');
+                console.log(response);
+
+            } else if (event.target.className == "name") {
+                candidate = event.target.innerHTML;
+                response = confirm('Souhaitez vous voter pour ' + candidate +' ?');
+                console.log(response);
+
+            } else if (event.target.tagName == 'P'){
+            // } else {
+                // candidate = event.target.previousSibling.innerHTML;
+                // console.log(event.target.parentElement.parentElement.children[0].innerHTML);
+                candidate = event.target.parentElement.parentElement.children[0].innerHTML;
+                response = confirm('Souhaitez vous voter pour ' + candidate +' ?');
+                console.log(response);
+
+            } else {
+                response = alert("Je n'ai pas pu prendre en compte votre selection");
+                // console.log(response);
+                response = false
+            }
+            if (response == true){
+                vote4candidate(candidate);
+            }
+            // var candidate = event.target.querySelector('.name').innerHTML;
+            // response = confirm('Souhaitez vous voter pour ' + candidate +' ?');
+            // console.log(response);
+            });
+        }
+        
+        function vote4candidate(candidate){
+            console.log(candidate);
+            { 
+            var value = candidate; 
+            $.ajax({ 
+                url: '/process', 
+                type: 'POST', 
+                contentType: 'application/json', 
+                data: JSON.stringify({ 'value': value }), 
+                success: function(response) { 
+                    // document.getElementById('output').innerHTML = response.result; 
+                    console.log(response.result)
+                    document.getElementsByClassName('resultat')[0].innerHTML = response.result;
+                    console.log(document.getElementsByClassName('resultat')[0].innerHTML);
+                }, 
+                error: function(error) { 
+                    console.log(error); 
+                    console.log('erreur')
+                } 
+            }); 
+        } 
+        }
+
+        function getStats(){
+            console.log();
+            { 
+            var value = ''; 
+            $.ajax({ 
+                url: '/result', 
+                type: 'POST', 
+                contentType: 'application/json', 
+                data: JSON.stringify({ 'value': value }), 
+                success: function(response) { 
+                    // document.getElementById('output').innerHTML = response.result; 
+                    console.log(response.result)
+                    document.getElementsByClassName('resultat')[0].innerHTML = response.result;
+                    console.log(document.getElementsByClassName('resultat')[0].innerHTML);
+                }, 
+                error: function(error) { 
+                    console.log(error); 
+                    console.log('erreur')
+                } 
+            }); 
+        } 
+        }
+    </script>
+
+</body>
+</html>

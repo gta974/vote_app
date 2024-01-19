@@ -1,0 +1,1 @@
+start C:\Users\gta97\Documents\Dev_app_vote\Scripts\python C:\Users\gta97\Documents\Dev_app_vote\APP_VOTE\serve_vote.py
